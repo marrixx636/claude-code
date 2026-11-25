@@ -75,7 +75,7 @@ const S2: React.FC = () => {
         </>
       }
     >
-      <CameraRig pos={[2.2, 0.8, 4.6]} target={[0, -0.3, 0]} fov={44} roll={Math.sin(f * 0.08) * 0.05} />
+      <CameraRig pos={[2.6, -0.2, 5.8]} target={[0, -0.1, 0]} fov={44} roll={Math.sin(f * 0.08) * 0.05} />
       <NightLights />
       <Stars />
       <group position={[0, 1.6, 0]} rotation={[0, Math.PI, 0]}>
@@ -160,7 +160,7 @@ const S4: React.FC = () => {
       <CameraRig pos={mixV3([0.6, 1.7, 5.4], [0.2, 1.7, 4.6], t)} target={[-0.9, 1.6, -1.5]} fov={42} />
       <hemisphereLight args={["#7f95d6", "#201828", 0.55]} />
       <directionalLight position={[-2, 3, -6]} intensity={1.4} color="#9fb8ff" />
-      <pointLight position={[0.5, 2.2, 1.5]} intensity={2} distance={6} color="#ffc98a" />
+      <pointLight position={[0.8, 2.2, 2.2]} intensity={6} distance={7} color="#ffc98a" />
       <Room
         frame={f}
         fire={0}
@@ -204,8 +204,8 @@ const S5: React.FC = () => {
         <>
           <Flash at={[20]} color="#ffd65c" max={0.6} length={10} />
           <Vignette />
-          <Caption text="Entonces hizo sonar su campana 🔔" from={5} to={85} />
-          <Caption text="¡Y llegaron TODOS! ✨" from={90} to={180} color="#ffd65c" />
+          <Caption text="Entonces hizo sonar su campana 🔔" from={5} to={85} y={320} />
+          <Caption text="¡Y llegaron TODOS! ✨" from={90} to={180} color="#ffd65c" y={320} />
         </>
       }
     >
@@ -217,8 +217,8 @@ const S5: React.FC = () => {
       <PineTree position={[4.5, 0, -3]} scale={1.2} />
       <PineTree position={[-6, 0, -6]} scale={1.4} />
       <Reindeer
-        position={[0.9, 0, 1.6]}
-        rotation={[0, -0.4, 0]}
+        position={[-0.3, 0, 2.2]}
+        rotation={[0, -0.2, 0]}
         scale={0.8}
         mood={f > 120 ? "happy" : "determined"}
         bellSwing={Math.sin(f * 0.9) * 0.7 * ring * (1 - land)}
@@ -227,8 +227,8 @@ const S5: React.FC = () => {
         headTilt={-0.2}
         blink={blinkAt(f, 70)}
       />
-      <BlobShadow position={[0.9, 0.02, 1.3]} scale={0.8} />
-      <pointLight position={[0.9, 1.2, 2.6]} intensity={ring * 6} distance={6} color="#ffcf5a" />
+      <BlobShadow position={[-0.3, 0.02, 1.9]} scale={0.8} />
+      <pointLight position={[-0.3, 1.2, 3.2]} intensity={ring * 6} distance={6} color="#ffcf5a" />
       {land > 0 && (
         <SparkleTrail
           path={(tt) => mixV3(from, teamPos, tt).map((v, i) => (i === 1 ? v + 0.5 : v)) as V3}
